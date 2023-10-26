@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:ClimaQuente"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <Style x:Key="textBlock_cabeçalho" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="FontFamily"  Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

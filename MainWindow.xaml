@@ -4,9 +4,72 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClimaQuente"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        ResizeMode="NoResize" 
+        WindowStyle="None" >
 
-    </Grid>
+    <Border Name="border_SombraBackground"
+            BorderBrush="#012E4D"
+            BorderThickness="4"
+            CornerRadius="18">
+        
+        <Border Name="border_Background"
+                Background="#02385C"
+                CornerRadius="16">
+            
+            <Grid Name="grid_Background"
+                  Height="600" 
+                  Width="450">
+
+                <Grid Name="grid_Principal"
+                      Height="auto"
+                      Margin="20"
+                      Width="auto">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Name="grid_Cabeçalho">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="340"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Name="textBlock_Localização"
+                               Text="Localização"                               
+                               Style="{StaticResource textBlock_cabeçalho}"/>
+
+                        <TextBlock Name="textBlock_Endereço"
+                                   Style="{StaticResource textBlock_cabeçalho}"
+                                   Text="São Paulo, Taboão da Serra"                               
+                                   FontSize="20"
+                                   Grid.Row="1"/>
+
+                        <Image Name="image_Flecha"
+                               Grid.RowSpan="2"                               
+                               Grid.Column="1"
+                               Margin="10"
+                               Source="/ClimaQuente;component/Imagens/arrow.png"/>
+
+                    </Grid>
+
+                    <ScrollViewer Name="scrollViewer_CardsTempo"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Disabled"
+                                  Grid.Row="1"/>
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+       
 </Window>
