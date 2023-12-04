@@ -1,5 +1,5 @@
 ﻿ClimaQuente
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 E:\Público\ClimaQuente\App.xaml
 2-213218895
 
-6-1103013530
+4-860540636
 1981827736222
 Componentes\Card_Clima.xaml;MainWindow.xaml;
 
-True
+False
 
