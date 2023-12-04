@@ -9,10 +9,28 @@
 
   <ItemGroup>
     <None Remove="Imagens\arrow.png" />
+    <None Remove="Imagens\Clima_Chuva.png" />
+    <None Remove="Imagens\Clima_ChuvaForte.png" />
+    <None Remove="Imagens\Clima_Garoa.png" />
+    <None Remove="Imagens\Clima_Neve.png" />
+    <None Remove="Imagens\Clima_Nublado.png" />
+    <None Remove="Imagens\Clima_Sol.png" />
+    <None Remove="Imagens\Clima_SolNublado.png" />
+    <None Remove="Imagens\Clima_SolNubladoChuva.png" />
+    <None Remove="Imagens\Clima_Trovoadas.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Imagens\arrow.png" />
+    <Resource Include="Imagens\Clima_Chuva.png" />
+    <Resource Include="Imagens\Clima_ChuvaForte.png" />
+    <Resource Include="Imagens\Clima_Garoa.png" />
+    <Resource Include="Imagens\Clima_Neve.png" />
+    <Resource Include="Imagens\Clima_Nublado.png" />
+    <Resource Include="Imagens\Clima_Sol.png" />
+    <Resource Include="Imagens\Clima_SolNublado.png" />
+    <Resource Include="Imagens\Clima_SolNubladoChuva.png" />
+    <Resource Include="Imagens\Clima_Trovoadas.png" />
   </ItemGroup>
 
 </Project>

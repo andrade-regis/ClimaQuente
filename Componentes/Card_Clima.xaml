@@ -8,8 +8,76 @@
     <Grid Name="grid_Background"
           Height="250"
           Width="410">
-        
-                
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Name="image_Flecha"
+               Grid.Column="0"
+               Margin="10"
+               Source="/ClimaQuente;component/Imagens/Clima_SolNubladoChuva.png"/>
+
+        <Grid Name="grid_conteúdo"
+              Margin="20 0 0 0"
+              Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="label_Data"
+                       Grid.Row="0"
+                       Style="{StaticResource textBlock_cabeçalho}"
+                       Text="03 de Dezembro"
+                       HorizontalAlignment="Left"
+                       Margin="0 0 0 10"
+                       VerticalAlignment="Bottom"/>
+
+            <TextBlock Name="label_Temperatura"
+                       Grid.Row="1"
+                       Style="{StaticResource textBlock_cabeçalho}"
+                       Text="25 ºC"
+                       FontSize="65"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Left"
+                       Margin="0 0 0 10"
+                       VerticalAlignment="Center"/>
+
+            <Grid Name="grid_conteúdo_MinMax"
+                  Grid.Row="2"
+                  Width="auto"
+                  Height="auto"
+                  Margin="0 0 0 10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Name="label_TemperaturaMin"
+                       Grid.Row="0"
+                       Style="{StaticResource textBlock_cabeçalho}"
+                       Text="Min: 25 ºC"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"/>
+
+                <TextBlock Name="label_TemperaturaMax"
+                       Grid.Row="1"
+                       Style="{StaticResource textBlock_cabeçalho}"
+                       Text="Max: 25 ºC"
+                       HorizontalAlignment="Left"
+                       Margin="0 0 0 10"
+                       VerticalAlignment="Center"/>
+
+
+            </Grid>               
+
+        </Grid>
+
 
     </Grid>
 
