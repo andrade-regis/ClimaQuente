@@ -16,11 +16,11 @@
 
         <Image Name="image_Flecha"
                Grid.Column="0"
-               Margin="10"
+               Margin="-10, 10, 10, 10"
                Source="/ClimaQuente;component/Imagens/Clima_SolNubladoChuva.png"/>
 
         <Grid Name="grid_conteúdo"
-              Margin="20 0 0 0"
+              Margin="25 0 0 0"
               Grid.Column="1">
 
             <Grid.RowDefinitions>

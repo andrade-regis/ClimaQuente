@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:ClimaQuente"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
-        ResizeMode="NoResize" 
+        ResizeMode="NoResize"
+        MaxHeight="600" 
+        MaxWidth="450"        
         WindowStyle="None" >
 
     <Border Name="border_SombraBackground"
@@ -45,7 +47,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Name="textBlock_Localização"
-                               Text="Localização"                               
+                               Text="Localização"
                                Style="{StaticResource textBlock_cabeçalho}"/>
 
                         <TextBlock Name="textBlock_Endereço"
@@ -64,7 +66,7 @@
 
                     <ScrollViewer Name="scrollViewer_CardsTempo"
                                   HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Hidden"
                                   Grid.Row="1"/>
 
                 </Grid>

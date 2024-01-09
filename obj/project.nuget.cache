@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7PwXNVCBCF1VHBlHl83sap7snsj+Dx+xKRFTLsqNEQjkadDl6C+FQEyK3IWCwn2sZbaDjJ2MIsv4V+pavH4aCg==",
+  "dgSpecHash": "ATIkoCac5kQFiaq9hyT5PMWy/g1P97r2ocJDJ0jP8JNZLKNjSwcM3XeQ+R83WHlcD0OkGW3a5I2E2oOkOdY0UQ==",
   "success": true,
   "projectFilePath": "E:\\Público\\ClimaQuente\\ClimaQuente.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Regis\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

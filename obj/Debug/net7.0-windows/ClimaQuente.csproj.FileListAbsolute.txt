@@ -3,7 +3,6 @@ E:\Público\ClimaQuente\bin\Debug\net7.0-windows\ClimaQuente.deps.json
 E:\Público\ClimaQuente\bin\Debug\net7.0-windows\ClimaQuente.runtimeconfig.json
 E:\Público\ClimaQuente\bin\Debug\net7.0-windows\ClimaQuente.dll
 E:\Público\ClimaQuente\bin\Debug\net7.0-windows\ClimaQuente.pdb
-E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.csproj.AssemblyReference.cache
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\Componentes\Card_Clima.g.cs
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\MainWindow.g.cs
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\App.g.cs
@@ -22,3 +21,7 @@ E:\Público\ClimaQuente\obj\Debug\net7.0-windows\refint\ClimaQuente.dll
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.pdb
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.genruntimeconfig.cache
 E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ref\ClimaQuente.dll
+E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.sourcelink.json
+E:\Público\ClimaQuente\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
+E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.csproj.AssemblyReference.cache
+E:\Público\ClimaQuente\obj\Debug\net7.0-windows\ClimaQuente.csproj.CopyComplete
