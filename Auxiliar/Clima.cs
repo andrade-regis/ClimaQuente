@@ -11,21 +11,21 @@ namespace ClimaQuente.Auxiliar
     {
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
 
-        [JsonProperty("city")]
-        public City City { get; set; }
-
         [JsonProperty("cod")]
         public string Cod { get; set; }
 
         [JsonProperty("message")]
-        public double Message { get; set; }
+        public int Message { get; set; }
 
         [JsonProperty("cnt")]
         public int Cnt { get; set; }
 
         [JsonProperty("list")]
         public List<List> List { get; set; }
-        
+
+        [JsonProperty("city")]
+        public City City { get; set; }
+
     }
 
     public class City
@@ -47,30 +47,27 @@ namespace ClimaQuente.Auxiliar
 
         [JsonProperty("timezone")]
         public int Timezone { get; set; }
+
+        [JsonProperty("sunrise")]
+        public int Sunrise { get; set; }
+
+        [JsonProperty("sunset")]
+        public int Sunset { get; set; }
+    }
+
+    public class Clouds
+    {
+        [JsonProperty("all")]
+        public int All { get; set; }
     }
 
     public class Coord
     {
-        [JsonProperty("lon")]
-        public double Lon { get; set; }
-
         [JsonProperty("lat")]
         public double Lat { get; set; }
-    }
 
-    public class FeelsLike
-    {
-        [JsonProperty("day")]
-        public double Day { get; set; }
-
-        [JsonProperty("night")]
-        public double Night { get; set; }
-
-        [JsonProperty("eve")]
-        public double Eve { get; set; }
-
-        [JsonProperty("morn")]
-        public double Morn { get; set; }
+        [JsonProperty("lon")]
+        public double Lon { get; set; }
     }
 
     public class List
@@ -78,65 +75,74 @@ namespace ClimaQuente.Auxiliar
         [JsonProperty("dt")]
         public int Dt { get; set; }
 
-        [JsonProperty("sunrise")]
-        public int Sunrise { get; set; }
-
-        [JsonProperty("sunset")]
-        public int Sunset { get; set; }
-
-        [JsonProperty("temp")]
-        public Temp Temp { get; set; }
-
-        [JsonProperty("feels_like")]
-        public FeelsLike FeelsLike { get; set; }
-
-        [JsonProperty("pressure")]
-        public int Pressure { get; set; }
-
-        [JsonProperty("humidity")]
-        public int Humidity { get; set; }
+        [JsonProperty("main")]
+        public Main Main { get; set; }
 
         [JsonProperty("weather")]
         public List<Weather> Weather { get; set; }
 
-        [JsonProperty("speed")]
-        public double Speed { get; set; }
-
-        [JsonProperty("deg")]
-        public int Deg { get; set; }
-
-        [JsonProperty("gust")]
-        public double Gust { get; set; }
-
         [JsonProperty("clouds")]
-        public int Clouds { get; set; }
+        public Clouds Clouds { get; set; }
+
+        [JsonProperty("wind")]
+        public Wind Wind { get; set; }
+
+        [JsonProperty("visibility")]
+        public int Visibility { get; set; }
 
         [JsonProperty("pop")]
         public double Pop { get; set; }
 
         [JsonProperty("rain")]
-        public double Rain { get; set; }
+        public Rain Rain { get; set; }
+
+        [JsonProperty("sys")]
+        public Sys Sys { get; set; }
+
+        [JsonProperty("dt_txt")]
+        public string DtTxt { get; set; }
     }
 
-    public class Temp
+    public class Main
     {
-        [JsonProperty("day")]
-        public double Day { get; set; }
+        [JsonProperty("temp")]
+        public double Temp { get; set; }
 
-        [JsonProperty("min")]
-        public double Min { get; set; }
+        [JsonProperty("feels_like")]
+        public double FeelsLike { get; set; }
 
-        [JsonProperty("max")]
-        public double Max { get; set; }
+        [JsonProperty("temp_min")]
+        public double TempMin { get; set; }
 
-        [JsonProperty("night")]
-        public double Night { get; set; }
+        [JsonProperty("temp_max")]
+        public double TempMax { get; set; }
 
-        [JsonProperty("eve")]
-        public double Eve { get; set; }
+        [JsonProperty("pressure")]
+        public int Pressure { get; set; }
 
-        [JsonProperty("morn")]
-        public double Morn { get; set; }
+        [JsonProperty("sea_level")]
+        public int SeaLevel { get; set; }
+
+        [JsonProperty("grnd_level")]
+        public int GrndLevel { get; set; }
+
+        [JsonProperty("humidity")]
+        public int Humidity { get; set; }
+
+        [JsonProperty("temp_kf")]
+        public double TempKf { get; set; }
+    }
+
+    public class Rain
+    {
+        [JsonProperty("3h")]
+        public double _3h { get; set; }
+    }
+
+    public class Sys
+    {
+        [JsonProperty("pod")]
+        public string Pod { get; set; }
     }
 
     public class Weather
@@ -152,5 +158,17 @@ namespace ClimaQuente.Auxiliar
 
         [JsonProperty("icon")]
         public string Icon { get; set; }
+    }
+
+    public class Wind
+    {
+        [JsonProperty("speed")]
+        public double Speed { get; set; }
+
+        [JsonProperty("deg")]
+        public int Deg { get; set; }
+
+        [JsonProperty("gust")]
+        public double Gust { get; set; }
     }
 }

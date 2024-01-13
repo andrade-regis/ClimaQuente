@@ -52,7 +52,7 @@
 
                         <TextBlock Name="textBlock_Endereço"
                                    Style="{StaticResource textBlock_cabeçalho}"
-                                   Text="São Paulo, Taboão da Serra"                               
+                                   Text="- - - - - - - - - - - -"                               
                                    FontSize="20"
                                    Grid.Row="1"/>
 

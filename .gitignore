@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Auxiliar/DadosDoApp.cs
+/.gitignore
+/Auxiliar/DadosDoApp.cs

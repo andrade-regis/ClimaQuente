@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Windows.Media.Animation;
 using System.Windows;
 using System.Net.Http.Json;
+using System.Runtime.CompilerServices;
 
 namespace ClimaQuente.Auxiliar
 {
@@ -20,83 +21,76 @@ namespace ClimaQuente.Auxiliar
 
         public static Clima Clima { get; set; }
 
-        private static string KeyLocalização = "";
-        private static string KeyClima = "";
+        private static string KeyLocalização = "YourKey";
+        private static string KeyClima = "YourKey";
 
         public static async void Retornar_Ip()
         {
-            using HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = await httpClient.GetAsync("https://api.ipify.org");
+            Ip = string.Empty;
 
-            if (response.IsSuccessStatusCode)
+            try
             {
-                Ip = await response.Content.ReadAsStringAsync();
+                using HttpClient client = new HttpClient();
+
+                HttpResponseMessage response = client.GetAsync("https://api.ipify.org").GetAwaiter().GetResult();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Ip = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                }
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception("Erro IP\n" + e.Message);
             }
         }
 
         public static async void Retornar_Localização()
         {
-            using (HttpClient client = new HttpClient())
+            Localização = null;
+
+            try
             {
-                try
+                using HttpClient client = new HttpClient();
+
+                string URL = $"https://api.ip2location.io/?key={KeyLocalização}&ip={Ip}&format=json";
+
+                HttpResponseMessage response = client.GetAsync(URL).GetAwaiter().GetResult();
+
+                if (response.IsSuccessStatusCode)
                 {
-                    string URL = $"https://api.ip2location.io/?key={KeyLocalização}&ip={Ip}&format=json";
+                    string jsonContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
-                    // Faz a chamada GET à API
-                    HttpResponseMessage response = await client.GetAsync(URL);
-
-                    // Verifica se a requisição foi bem sucedida
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Lê o conteúdo da resposta como uma string
-                        string jsonContent = await response.Content.ReadAsStringAsync();
-
-                        // Converte a string JSON para um objeto ou estrutura de dados
-                        Localização = JsonConvert.DeserializeObject<Localização>(jsonContent);
-                    }
-                    else
-                    {
-                        Localização = null;
-                        MessageBox.Show("Não foi possivel obter localização", "ClimaQuente",MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    Localização = JsonConvert.DeserializeObject<Localização>(jsonContent);
                 }
-                catch (HttpRequestException e)
-                {
-                        MessageBox.Show(e.Message, "ClimaQuente",MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception("Erro Localização\n" + e.Message);
             }
         }
 
         public static async void Retornar_Clima()
         {
-            using (HttpClient client = new HttpClient())
+            Clima = null;
+
+            try
             {
-                try
+                HttpClient client = new HttpClient();
+
+                string URL = $"https://api.openweathermap.org/data/2.5/forecast?lat={Localização.Latitude.ToString().Replace(',', '.')}&lon={Localização.Longitude.ToString().Replace(',', '.')}&appid={KeyClima}&units=metric";
+                HttpResponseMessage response = client.GetAsync(URL).GetAwaiter().GetResult();
+
+                if (response.IsSuccessStatusCode)
                 {
-                    string URL = $"api.openweathermap.org/data/2.5/forecast/daily?lat={Localização.Latitude}&lon={Localização.Longitude}&cnt={7}&appid={KeyClima}";
+                    string jsonContent = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
-                    // Faz a chamada GET à API
-                    HttpResponseMessage response = await client.GetAsync(URL);
-
-                    // Verifica se a requisição foi bem sucedida
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Lê o conteúdo da resposta como uma string
-                        string jsonContent = await response.Content.ReadAsStringAsync();
-
-                        // Converte a string JSON para um objeto ou estrutura de dados
-                        Clima = JsonConvert.DeserializeObject<Clima>(jsonContent);
-                    }
-                    else
-                    {
-                        Clima = null;
-                        MessageBox.Show("Não foi possivel obter clima", "ClimaQuente", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    Clima = JsonConvert.DeserializeObject<Clima>(jsonContent);
                 }
-                catch (HttpRequestException e)
-                {
-                    MessageBox.Show(e.Message, "ClimaQuente", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+            }
+            catch (HttpRequestException e)
+            {
+                throw new Exception("Erro Clima\n" + e.Message);
             }
         }
     }

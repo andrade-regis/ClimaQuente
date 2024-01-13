@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClimaQuente")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86179ca4788b5d037de1eab9c3839b6505ad4c65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068fa9a435e6f5b671018d66fba710bb178010e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClimaQuente")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClimaQuente")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
